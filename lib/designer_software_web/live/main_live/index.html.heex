@@ -1,0 +1,185 @@
+<div class="px-[10px] md:p-[20px] z-20 static mb-[25dvh]">
+
+    <div
+        class={
+        if @is_active_menu,
+            do: "top-0 left-0 h-full bg-black fixed w-full z-10 duration-300 ease-in-out",
+            else: "fixed left-0 w-full h-[23px] top-[20px] lg:top-[40px] z-10 duration-300 ease-in-out opacity-0"
+        }
+        >
+    </div>
+
+    <div class="
+        fixed top-0 left-0 w-full  flex justify-between z-50
+        pt-[20px] px-[10px]
+        md:pt-[20px] md:px-[20px]
+        lg:pt-[40px]
+    ">
+        <.roll_text
+            lines={["[ DESIGNER SOFTWARE ]", "[ DESIGNER SOFTWARE ]"]}
+            class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
+        />
+
+        <%= if @is_active_menu do %>
+        <div phx-click="toggle-menu">
+            <.roll_text
+                lines={["[ CLOSE ]", "[ CLOSE ]"]}
+                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
+            />
+        </div>
+        <% else %>
+        <div phx-click="toggle-menu">
+            <.roll_text
+                lines={["[ MENU ]", "[ MENU ]"]} phx-click="toggle-menu"
+                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
+            />
+        </div>
+        <% end %>
+    </div>
+
+    <div class="mt-[6rem] text-[#d9d9d9] flex justify-center">
+        <div class="w-fit">
+            <h3 class="
+                font-bold text-center
+                text-[46px] leading-[46px]
+                md:text-[96px] md:leading-[96px]
+                lg:text-[120px] lg:leading-[120px]
+                xl:text-[152px] xl:leading-[152px]
+            ">
+                DESIGNER<br />
+                SOFTWARE
+            </h3>
+
+            <p class="md:hidden max-w-[250px] text-center mt-4 text-sm">
+                We are a creative studio based in Canada, we build
+                solid brands that needs no introduction at all.
+            </p>
+
+            <p class="mt-[3rem] mb-[3rem] text-[18px] font-medium text-[#d9d9d9] hidden md:block text-center lg:text-right">
+                <span class="ml-[14ch]">We are a creative studio</span><br />
+                based in Canada, we build solid brands
+                <br /><span class="mr-[5.5ch]">that needs no introduction at all</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="flex items-center justify-between mt-[3rem]">
+        <p class="text-[14px] lg:text-[18px] text-[#d9d9d9]">[ FEATURED PROJECTS ]</p>
+
+        <.roll_text
+            lines={["[ HIRE ME ]", "[ HIRE ME ]"]}
+            class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
+        />
+    </div>
+
+    <div class="
+        grid gap-6
+        grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+        mt-[1rem] md:mt-[2rem] lg:mt-[3rem]
+    ">
+        <div class="aspect-square bg-[#fe2501] rounded-3xl"></div>
+        <div class="aspect-square bg-[#09934d] rounded-3xl"></div>
+        <div class="aspect-square bg-[#ab552c] rounded-3xl"></div>
+
+        <div class="aspect-square bg-[#c3c3c3] rounded-3xl"></div>
+        <div class="aspect-square bg-[#793517] rounded-3xl"></div>
+        <div class="aspect-square bg-[#ea8899] rounded-3xl"></div>
+    </div>
+
+    <div class="flex flex-col gap-[5rem] items-center md:items-start md:pl-[55%] w-full mt-[5rem] text-[#d9d9d9]">
+        <p class="max-w-[300px] text-left mt-4 text-[18px]">
+            With a blend of creativity and<br />
+            technical prowess, we transform<br />
+            ideas into reality!
+        </p>
+
+        <p class="max-w-[300px] text-left mt-4 text-[18px]">
+            [ OUR SERVICES ]
+        </p>
+    </div>
+
+    <div class="
+        grid gap-8
+        grid-cols-1 md:grid-cols-2 xl:grid-cols-4
+        w-full mt-[5rem] text-[#d9d9d9]
+    ">
+        <div class="flex flex-col gap-[4rem] w-full border-[#2d2d2d] border-white-800 border-b md:border-b-0 md:border-l p-4 md:pl-10">
+            <div>
+                <p class="text-[#ea4826] text-[20px]">01</p>
+                <p class="text-[50px]">Research</p>
+            </div>
+
+            <div class="grid gap-3">
+                <p class="text-[24px]">Digging deep</p>
+                <p class="text-[20px] opacity-60">We unearth valuable insights that inform strategic decisions, guiding you towards sustainable growth and impact.</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-[4rem] w-full border-[#2d2d2d] border-white-800 border-b md:border-b-0 md:border-l p-4 md:pl-10">
+            <div>
+                <p class="text-[#ea4826] text-[20px]">02</p>
+                <p class="text-[50px]">Strategy</p>
+            </div>
+
+            <div class="grid gap-3">
+                <p class="text-[24px]">Paving the way</p>
+                <p class="text-[20px] opacity-60">Tailored strategies that align with your goals, and help you to navigate complexities and seize opportunities.</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-[4rem] w-full border-[#2d2d2d] border-white-800 border-b md:border-b-0 md:border-l p-4 md:pl-10">
+            <div>
+                <p class="text-[#ea4826] text-[20px]">03</p>
+                <p class="text-[50px]">Design</p>
+            </div>
+
+            <div class="grid gap-3">
+                <p class="text-[24px]">Shaping the future</p>
+                <p class="text-[20px] opacity-60">We blend creativity with functionality, crafting experiences that leave lasting impressions and resonate.</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-[4rem] w-full border-[#2d2d2d] border-white-800 border-b md:border-b-0 md:border-l p-4 md:pl-10">
+            <div>
+                <p class="text-[#ea4826] text-[20px]">04</p>
+                <p class="text-[50px]">Development</p>
+            </div>
+
+            <div class="grid gap-3">
+                <p class="text-[24px]">Building visions</p>
+                <p class="text-[20px] opacity-60">We harness the latest technologies to build robust, scalable platforms that drive your digital presence forward.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="w-full h-[25dvh] fixed bottom-0 z-[-1] max-h-full flex flex-col p-5">
+    <div class="w-full h-full">
+    </div>
+    <p class="text-center text-[150px] font-bold opacity-10">
+        DESIGNER SOFTWARE
+    </p>
+    <div class="flex items-center justify-between">
+        <div class="flex gap-5">
+            <.roll_text
+                lines={["PRIVACY POLICY", "PRIVACY POLICY"]}
+                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
+            />
+            <.roll_text
+                lines={["COOKIE POLICY", "COOKIE POLICY"]}
+                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
+            />
+        </div>
+
+        <div class="flex gap-5">
+            <.roll_text
+                lines={["INSTAGRAM", "INSTAGRAM"]}
+                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
+            />
+            <.roll_text
+                lines={["LINKEDIN", "LINKEDIN"]}
+                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
+            />
+        </div>
+    </div>
+</div>

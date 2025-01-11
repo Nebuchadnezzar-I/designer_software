@@ -1,0 +1,14 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./fonts.css";
+
+html, body {
+    background: black;
+    color: white;
+    font-family: Inter;
+}
+
+._100-3 {
+    max-width: calc(100vw - 3rem - 0rem);
+}
