@@ -17,8 +17,11 @@ defmodule DesignerSoftwareWeb.Router do
     scope "/", DesignerSoftwareWeb do
         pipe_through :browser
 
-        # get "/", PageController, :home
-        live "/", MainLive.Index, :index
+        live "/",               MainLive.Index,     :index
+        live "/hire-me",        MainLive.HireMe,    :index
+        live "/privacy-policy", MainLive.PrivPo,    :index
+        live "/p/:project",     MainLive.Project,   :index
+        get  "/p",              RedirectController, :redirect_to_home
     end
 
     # Other scopes may use custom stacks.

@@ -1,4 +1,4 @@
-<div class="px-[10px] md:p-[20px] z-20 static mb-[24vw]">
+<div class="px-[10px] md:p-[20px] z-20 static mb-[30dvh]">
 
     <div
         class={
@@ -15,12 +15,10 @@
         md:pt-[20px] md:px-[20px]
         lg:pt-[40px]
     ">
-        <a href="/">
-            <.roll_text
-                lines={["[ DESIGNER SOFTWARE ]", "[ DESIGNER SOFTWARE ]"]}
-                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
-            />
-        </a>
+        <.roll_text
+            lines={["[ DESIGNER SOFTWARE ]", "[ DESIGNER SOFTWARE ]"]}
+            class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
+        />
 
         <%= if @is_active_menu do %>
         <div phx-click="toggle-menu">
@@ -68,12 +66,10 @@
     <div class="flex items-center justify-between mt-[3rem]">
         <p class="text-[14px] lg:text-[18px] text-[#d9d9d9]">[ FEATURED PROJECTS ]</p>
 
-        <a href="/hire-me">
-            <.roll_text
-                lines={["[ HIRE ME ]", "[ HIRE ME ]"]}
-                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
-            />
-        </a>
+        <.roll_text
+            lines={["[ HIRE ME ]", "[ HIRE ME ]"]}
+            class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
+        />
     </div>
 
     <div class="
@@ -117,84 +113,78 @@
             </div>
 
             <div class="grid gap-3">
-                <p class="text-[18px] md:text-[20px] lg:text-[24px]">Digging deep</p>
-                <p class="text-[14px] md:text-[18px] opacity-60">We unearth valuable insights that inform strategic decisions, guiding you towards sustainable growth and impact.</p>
+                <p class="text-[18px] md:text-[20px]">Digging deep</p>
+                <p class="text-[14px] md:text-[14px] opacity-60">We unearth valuable insights that inform strategic decisions, guiding you towards sustainable growth and impact.</p>
             </div>
         </div>
 
-        <div class="
-            flex flex-col gap-[2rem] md:gap-[4rem] lg:gap-[6rem] w-full border-[#2d2d2d] border-white-800
-            border-b md:border-b-0 md:border-l p-4 md:pl-10
-        ">
+        <!--
+        <div class="flex flex-col gap-[4rem] w-full border-[#2d2d2d] border-white-800 border-b md:border-b-0 md:border-l p-4 md:pl-10">
             <div>
-                <p class="text-[#ea4826] text-[18px]">01</p>
-                <p class="text-[26px] md:text-[40px]">Research</p>
+                <p class="text-[#ea4826] text-[18px]">02</p>
+                <p class="text-[50px]">Strategy</p>
             </div>
 
             <div class="grid gap-3">
-                <p class="text-[18px] md:text-[20px] lg:text-[24px]">Digging deep</p>
-                <p class="text-[14px] md:text-[18px] opacity-60">We unearth valuable insights that inform strategic decisions, guiding you towards sustainable growth and impact.</p>
+                <p class="text-[24px]">Paving the way</p>
+                <p class="text-[20px] opacity-60">Tailored strategies that align with your goals, and help you to navigate complexities and seize opportunities.</p>
             </div>
         </div>
 
-        <div class="
-            flex flex-col gap-[2rem] md:gap-[4rem] lg:gap-[6rem] w-full border-[#2d2d2d] border-white-800
-            border-b md:border-b-0 md:border-l p-4 md:pl-10
-        ">
+        <div class="flex flex-col gap-[4rem] w-full border-[#2d2d2d] border-white-800 border-b md:border-b-0 md:border-l p-4 md:pl-10">
             <div>
-                <p class="text-[#ea4826] text-[18px]">01</p>
-                <p class="text-[26px] md:text-[40px]">Research</p>
+                <p class="text-[#ea4826] text-[18px]">03</p>
+                <p class="text-[50px]">Design</p>
             </div>
 
             <div class="grid gap-3">
-                <p class="text-[18px] md:text-[20px] lg:text-[24px]">Digging deep</p>
-                <p class="text-[14px] md:text-[18px] opacity-60">We unearth valuable insights that inform strategic decisions, guiding you towards sustainable growth and impact.</p>
+                <p class="text-[24px]">Shaping the future</p>
+                <p class="text-[20px] opacity-60">We blend creativity with functionality, crafting experiences that leave lasting impressions and resonate.</p>
             </div>
         </div>
 
-        <div class="
-            flex flex-col gap-[2rem] md:gap-[4rem] lg:gap-[6rem] w-full border-[#2d2d2d] border-white-800
-            border-b md:border-b-0 md:border-l p-4 md:pl-10
-        ">
+        <div class="flex flex-col gap-[4rem] w-full border-[#2d2d2d] border-white-800 border-b md:border-b-0 md:border-l p-4 md:pl-10">
             <div>
-                <p class="text-[#ea4826] text-[18px]">01</p>
-                <p class="text-[26px] md:text-[40px]">Research</p>
+                <p class="text-[#ea4826] text-[18px]">04</p>
+                <p class="text-[50px]">Development</p>
             </div>
 
             <div class="grid gap-3">
-                <p class="text-[18px] md:text-[20px] lg:text-[24px]">Digging deep</p>
-                <p class="text-[14px] md:text-[18px] opacity-60">We unearth valuable insights that inform strategic decisions, guiding you towards sustainable growth and impact.</p>
+                <p class="text-[24px]">Building visions</p>
+                <p class="text-[20px] opacity-60">We harness the latest technologies to build robust, scalable platforms that drive your digital presence forward.</p>
             </div>
         </div>
-
+        -->
     </div>
 </div>
 
-<div class="w-full fixed bottom-0 z-[-1] max-h-full flex flex-col p-5">
+<div class="w-full h-[30dvh] fixed bottom-0 z-[-1] max-h-full flex flex-col p-5">
     <div class="w-full h-full">
     </div>
     <p class="text-center text-[8vw] font-bold opacity-10">
         DESIGNER SOFTWARE
     </p>
-    <div class="flex items-center justify-between gap-3">
-        <a href="/privacy-policy">
+    <div class="flex items-center justify-between">
+        <div class="grid sm:flex gap-5">
             <.roll_text
                 lines={["PRIVACY POLICY", "PRIVACY POLICY"]}
                 class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
             />
-        </a>
-        <div class="w-full"></div>
-        <a target="_blank" href="http://instagram.com">
+            <.roll_text
+                lines={["COOKIE POLICY", "COOKIE POLICY"]}
+                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
+            />
+        </div>
+
+        <div class="grid sm:flex gap-5">
             <.roll_text
                 lines={["INSTAGRAM", "INSTAGRAM"]}
                 class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
             />
-        </a>
-        <a target="_blank" href="http://linkedin.com">
             <.roll_text
                 lines={["LINKEDIN", "LINKEDIN"]}
                 class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
             />
-        </a>
+        </div>
     </div>
 </div>
