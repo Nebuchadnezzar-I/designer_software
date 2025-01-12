@@ -19,6 +19,7 @@ defmodule DesignerSoftwareWeb.Router do
 
         live "/",               MainLive.Index,     :index
         live "/hire-me",        MainLive.HireMe,    :index
+        live "/about",          MainLive.About,     :index
         live "/privacy-policy", MainLive.PrivPo,    :index
         live "/p/:project",     MainLive.Project,   :index
         get  "/p",              RedirectController, :redirect_to_home

@@ -1,12 +1,53 @@
-<div class="px-[10px] md:p-[20px] z-20 static mb-[24vw]">
-
+<div class="px-[10px] md:p-[20px] z-20 static" id="parent">
     <div
         class={
         if @is_active_menu,
-            do: "top-0 left-0 h-full bg-black fixed w-full z-10 duration-300 ease-in-out",
-            else: "fixed left-0 w-full h-[23px] top-[20px] lg:top-[40px] z-10 duration-300 ease-in-out opacity-0"
+            do: "top-0 left-0 h-full bg-black fixed w-full z-10 duration-300 super-smooth",
+            else: "fixed left-0 w-full h-[23px] top-[20px] lg:top-[40px] z-10 duration-300 super-smooth opacity-0 overflow-hidden"
         }
         >
+        <div class="w-full h-full flex items-center justify-center gap-3">
+            <div class="w-full"></div>
+
+            <div class="
+                w-full flex flex-col text-3xl font-bold
+            ">
+                <a href="/">
+                <.roll_text
+                    lines={["HOME", "HOME"]}
+                    class="
+                        hover:text-[#d9d9d9] text-[#464646] duration-200
+                        text-[128px] h-[128px] leading-[128px]
+                    "
+                />
+                </a>
+                <.roll_text
+                    lines={["SHOWCASE", "SHOWCASE"]}
+                    class="
+                        hover:text-[#d9d9d9] text-[#464646] duration-200
+                        text-[128px] h-[128px] leading-[128px]
+                    "
+                />
+                <a href="/about">
+                <.roll_text
+                    lines={["ABOUT", "ABOUT"]}
+                    class="
+                        hover:text-[#d9d9d9] text-[#464646] duration-200
+                        text-[128px] h-[128px] leading-[128px]
+                    "
+                />
+                </a>
+                <a href="/hire-me">
+                <.roll_text
+                    lines={["CONTACT", "CONTACT"]}
+                    class="
+                        hover:text-[#d9d9d9] text-[#464646] duration-200
+                        text-[128px] h-[128px] leading-[128px]
+                    "
+                />
+                </a>
+            </div>
+        </div>
     </div>
 
     <div class="
@@ -170,7 +211,7 @@
     </div>
 </div>
 
-<div class="w-full fixed bottom-0 z-[-1] max-h-full flex flex-col p-5">
+<div id="footer" class="w-full fixed bottom-0 z-[-1] max-h-full flex flex-col p-5">
     <div class="w-full h-full">
     </div>
     <p class="text-center text-[8vw] font-bold opacity-10">
@@ -180,7 +221,7 @@
         <a href="/privacy-policy">
             <.roll_text
                 lines={["PRIVACY POLICY", "PRIVACY POLICY"]}
-                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
+                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px] text-nowrap"
             />
         </a>
         <div class="w-full"></div>
