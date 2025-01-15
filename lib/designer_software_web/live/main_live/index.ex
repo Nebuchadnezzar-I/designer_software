@@ -1,6 +1,5 @@
 defmodule DesignerSoftwareWeb.MainLive.Index do
     use DesignerSoftwareWeb, :live_view
-    # alias DesignerSoftware.Page
 
     @impl true
     def mount(_params, _session, socket) do

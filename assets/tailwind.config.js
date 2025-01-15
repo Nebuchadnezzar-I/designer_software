@@ -6,7 +6,20 @@ module.exports = {
     content: [
         "./js/**/*.js",
         "../lib/designer_software_web.ex",
-        "../lib/designer_software_web/**/*.*ex"
+        "../lib/designer_software_web/**/*.*ex",
+    ],
+    safelist: [
+        "text-[16px]",
+        "h-[24px]",
+        "hover:-translate-y-[24px]",
+
+        "text-[18px]",
+        "h-[30px]",
+        "hover:-translate-y-[30px]",
+
+        "text-[95px]",
+        "h-[95px]",
+        "hover:-translate-y-[95px]",
     ],
     theme: {
         extend: {
@@ -14,8 +27,11 @@ module.exports = {
                 brand: "#FD4F00",
             },
             screens: {
-                xl: '1440px',
-            },
+                'xs': '320px',
+                'sm': '760px',
+                'md': '1140px',
+                'lg': '1440px',
+            }
         },
     },
     plugins: [

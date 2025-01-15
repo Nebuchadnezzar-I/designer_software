@@ -1,46 +1,17 @@
 defmodule DesignerSoftwareWeb.CoreComponents do
     use Phoenix.Component
 
-    @doc """
-    ## Props
-    - `:lines` (required): A list of strings to display.
-    - `:class` (optional): Additional classes for customization.
+    attr :font_size, :string, default: "16px"
+    attr :height, :string, default: "24px"
+    attr :class, :string, default: ""
+    attr :content, :string, default: "[ NOTHING STUDIO ]"
 
-    ## Example
-    <.roll_text_big lines={["Line 1", "Line 2"]} class="custom-class" />
-    """
-    def roll_text_big(assigns) do
-        assigns = assign_new(assigns, :class, fn -> "" end)
-
+    def text_roll(assigns) do
         ~H"""
-        <div class={"overflow-hidden relative group w-fit cursor-pointer " <> @class}>
-            <div class="transition-transform flex flex-col duration-200 ease-in-out transform group-hover:translate-y-[-30%]">
-                <%= for line <- @lines do %>
-                    <p><%= line %></p>
-                <% end %>
-            </div>
-        </div>
-        """
-    end
-
-
-    @doc """
-    ## Props
-    - `:lines` (required): A list of strings to display.
-    - `:class` (optional): Additional classes for customization.
-
-    ## Example
-    <.roll_text lines={["Line 1", "Line 2"]} class="custom-class" />
-    """
-    def roll_text(assigns) do
-        assigns = assign_new(assigns, :class, fn -> "" end)
-
-        ~H"""
-        <div class={"overflow-hidden relative group w-fit cursor-pointer " <> @class}>
-            <div class="transition-transform duration-200 ease-in-out transform group-hover:translate-y-[-50%]">
-                <%= for line <- @lines do %>
-                    <p><%= line %></p>
-                <% end %>
+        <div class={"text-roll h-[#{@height}] text-[#{@font_size}] #{@class}"}>
+            <div class={"text-roll_magic hover:-translate-y-[#{@height}]"}>
+                <p>{@content}</p>
+                <p>{@content}</p>
             </div>
         </div>
         """

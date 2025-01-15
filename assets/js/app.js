@@ -22,32 +22,6 @@ import {Socket} from "phoenix"
 import {LiveSocket} from "phoenix_live_view"
 import topbar from "../vendor/topbar"
 
-let Hooks = {};
-
-function updatePadding() {
-    const sibling = document.getElementById('footer');
-    const parent = document.getElementById('parent');
-
-    if (sibling && parent) {
-        const siblingHeight = sibling.offsetHeight;
-        parent.style.marginBottom = `${siblingHeight}px`;
-    }
-}
-
-// Add event listeners globally
-document.addEventListener('DOMContentLoaded', () => {
-    window.addEventListener('resize', updatePadding);
-    window.addEventListener('load', updatePadding);
-    updatePadding(); // Run it immediately on DOMContentLoaded
-});
-
-// Handle LiveView updates
-window.addEventListener("phx:page-loading-stop", () => {
-    updatePadding(); // Ensure padding is adjusted after LiveView DOM updates
-});
-
-
-
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 let liveSocket = new LiveSocket("/live", Socket, {
   longPollFallbackMs: 2500,

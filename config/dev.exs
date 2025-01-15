@@ -13,7 +13,7 @@ config :designer_software, DesignerSoftwareWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "LhReOaZkplVvBbNwtOVvpy1KY2r/m0MMFTyKZixFGCBC981NRbZi0PtQU4iBOB6L",
+  secret_key_base: "Dk6lVN2t9D5bkhIywbHArzTozHydsqt1/6ViYdPZd1D5VT3utnjbp5DOVrhRAqK/",
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:designer_software, ~w(--sourcemap=inline --watch)]},
     tailwind: {Tailwind, :install_and_run, [:designer_software, ~w(--watch)]}
@@ -47,7 +47,6 @@ config :designer_software, DesignerSoftwareWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
-      ~r"priv/gettext/.*(po)$",
       ~r"lib/designer_software_web/(controllers|live|components)/.*(ex|heex)$"
     ]
   ]
@@ -70,6 +69,3 @@ config :phoenix_live_view,
   debug_heex_annotations: true,
   # Enable helpful, but potentially expensive runtime checks
   enable_expensive_runtime_checks: true
-
-# Disable swoosh api client as it is only required for production adapters.
-config :swoosh, :api_client, false

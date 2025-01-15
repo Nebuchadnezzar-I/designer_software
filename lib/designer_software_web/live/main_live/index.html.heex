@@ -1,241 +1,81 @@
-<div class="px-[10px] md:p-[20px] z-20 static" id="parent">
-    <div
-        class={
-        if @is_active_menu,
-            do: "top-0 left-0 h-full bg-black fixed w-full z-10 duration-300 super-smooth",
-            else: "fixed left-0 w-full h-[23px] top-[20px] lg:top-[40px] z-10 duration-300 super-smooth opacity-0 overflow-hidden"
-        }
-        >
-        <div class="w-full h-full flex items-center justify-center gap-3">
-            <div class="w-full"></div>
+<div class="nav-header">
+    <.text_roll
+        font_size="16px"
+        height="24px"
+        content="[ NOTHING STUDIO ]"
+    />
 
-            <div class="
-                w-full flex flex-col text-3xl font-bold
-            ">
-                <a href="/">
-                <.roll_text
-                    lines={["HOME", "HOME"]}
-                    class="
-                        hover:text-[#d9d9d9] text-[#464646] duration-200
-                        text-[128px] h-[128px] leading-[128px]
-                    "
-                />
-                </a>
-                <.roll_text
-                    lines={["SHOWCASE", "SHOWCASE"]}
-                    class="
-                        hover:text-[#d9d9d9] text-[#464646] duration-200
-                        text-[128px] h-[128px] leading-[128px]
-                    "
-                />
-                <a href="/about">
-                <.roll_text
-                    lines={["ABOUT", "ABOUT"]}
-                    class="
-                        hover:text-[#d9d9d9] text-[#464646] duration-200
-                        text-[128px] h-[128px] leading-[128px]
-                    "
-                />
-                </a>
-                <a href="/hire-me">
-                <.roll_text
-                    lines={["CONTACT", "CONTACT"]}
-                    class="
-                        hover:text-[#d9d9d9] text-[#464646] duration-200
-                        text-[128px] h-[128px] leading-[128px]
-                    "
-                />
-                </a>
-            </div>
-        </div>
-    </div>
+    <div phx-click="toggle-menu">
+        <.text_roll
+            font_size="16px"
+            height="24px"
+            content={
+                if @is_active_menu,
+                    do: "[ CLOSE ]",
+                    else: "[ MENU ]"
+            }
 
-    <div class="
-        fixed top-0 left-0 w-full  flex justify-between z-50
-        pt-[20px] px-[10px]
-        md:pt-[20px] md:px-[20px]
-        lg:pt-[40px]
-    ">
-        <a href="/">
-            <.roll_text
-                lines={["[ DESIGNER SOFTWARE ]", "[ DESIGNER SOFTWARE ]"]}
-                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
-            />
-        </a>
-
-        <%= if @is_active_menu do %>
-        <div phx-click="toggle-menu">
-            <.roll_text
-                lines={["[ CLOSE ]", "[ CLOSE ]"]}
-                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
-            />
-        </div>
-        <% else %>
-        <div phx-click="toggle-menu">
-            <.roll_text
-                lines={["[ MENU ]", "[ MENU ]"]} phx-click="toggle-menu"
-                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
-            />
-        </div>
-        <% end %>
-    </div>
-
-    <div class="mt-[6rem] text-[#d9d9d9] flex justify-center">
-        <div class="w-fit">
-            <h3 class="
-                font-bold text-center
-                text-[46px] leading-[46px]
-                md:text-[96px] md:leading-[96px]
-                lg:text-[120px] lg:leading-[120px]
-                xl:text-[152px] xl:leading-[152px]
-            ">
-                DESIGNER<br />
-                SOFTWARE
-            </h3>
-
-            <p class="md:hidden max-w-[250px] text-center mt-4 text-sm">
-                We are a creative studio based in Canada, we build
-                solid brands that needs no introduction at all.
-            </p>
-
-            <p class="mt-[3rem] mb-[3rem] text-[18px] font-medium text-[#d9d9d9] hidden md:block text-center lg:text-right">
-                <span class="ml-[14ch]">We are a creative studio</span><br />
-                based in Canada, we build solid brands
-                <br /><span class="mr-[5.5ch]">that needs no introduction at all</span>
-            </p>
-        </div>
-    </div>
-
-    <div class="flex items-center justify-between mt-[3rem]">
-        <p class="text-[14px] lg:text-[18px] text-[#d9d9d9]">[ FEATURED PROJECTS ]</p>
-
-        <a href="/hire-me">
-            <.roll_text
-                lines={["[ HIRE ME ]", "[ HIRE ME ]"]}
-                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
-            />
-        </a>
-    </div>
-
-    <div class="
-        grid gap-6
-        grid-cols-1 md:grid-cols-2 lg:grid-cols-3
-        mt-[1rem] md:mt-[2rem] lg:mt-[3rem]
-    ">
-        <div class="aspect-square bg-[#fe2501] rounded-3xl"></div>
-        <div class="aspect-square bg-[#09934d] rounded-3xl"></div>
-        <div class="aspect-square bg-[#ab552c] rounded-3xl"></div>
-
-        <div class="aspect-square bg-[#c3c3c3] rounded-3xl"></div>
-        <div class="aspect-square bg-[#793517] rounded-3xl"></div>
-        <div class="aspect-square bg-[#ea8899] rounded-3xl"></div>
-    </div>
-
-    <div class="flex flex-col gap-[5rem] items-center md:items-start md:pl-[55%] w-full mt-[5rem] text-[#d9d9d9]">
-        <p class="max-w-[300px] text-left mt-4 text-[18px]">
-            With a blend of creativity and<br />
-            technical prowess, we transform<br />
-            ideas into reality!
-        </p>
-
-        <p class="max-w-[300px] text-left mt-4 text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]">
-            [ OUR SERVICES ]
-        </p>
-    </div>
-
-    <div class="
-        grid gap-8
-        grid-cols-1 md:grid-cols-2 xl:grid-cols-4
-        w-full mt-[5rem] text-[#d9d9d9]
-    ">
-        <div class="
-            flex flex-col gap-[2rem] md:gap-[4rem] lg:gap-[6rem] w-full border-[#2d2d2d] border-white-800
-            border-b md:border-b-0 md:border-l p-4 md:pl-10
-        ">
-            <div>
-                <p class="text-[#ea4826] text-[18px]">01</p>
-                <p class="text-[26px] md:text-[40px]">Research</p>
-            </div>
-
-            <div class="grid gap-3">
-                <p class="text-[18px] md:text-[20px] lg:text-[24px]">Digging deep</p>
-                <p class="text-[14px] md:text-[18px] opacity-60">We unearth valuable insights that inform strategic decisions, guiding you towards sustainable growth and impact.</p>
-            </div>
-        </div>
-
-        <div class="
-            flex flex-col gap-[2rem] md:gap-[4rem] lg:gap-[6rem] w-full border-[#2d2d2d] border-white-800
-            border-b md:border-b-0 md:border-l p-4 md:pl-10
-        ">
-            <div>
-                <p class="text-[#ea4826] text-[18px]">01</p>
-                <p class="text-[26px] md:text-[40px]">Research</p>
-            </div>
-
-            <div class="grid gap-3">
-                <p class="text-[18px] md:text-[20px] lg:text-[24px]">Digging deep</p>
-                <p class="text-[14px] md:text-[18px] opacity-60">We unearth valuable insights that inform strategic decisions, guiding you towards sustainable growth and impact.</p>
-            </div>
-        </div>
-
-        <div class="
-            flex flex-col gap-[2rem] md:gap-[4rem] lg:gap-[6rem] w-full border-[#2d2d2d] border-white-800
-            border-b md:border-b-0 md:border-l p-4 md:pl-10
-        ">
-            <div>
-                <p class="text-[#ea4826] text-[18px]">01</p>
-                <p class="text-[26px] md:text-[40px]">Research</p>
-            </div>
-
-            <div class="grid gap-3">
-                <p class="text-[18px] md:text-[20px] lg:text-[24px]">Digging deep</p>
-                <p class="text-[14px] md:text-[18px] opacity-60">We unearth valuable insights that inform strategic decisions, guiding you towards sustainable growth and impact.</p>
-            </div>
-        </div>
-
-        <div class="
-            flex flex-col gap-[2rem] md:gap-[4rem] lg:gap-[6rem] w-full border-[#2d2d2d] border-white-800
-            border-b md:border-b-0 md:border-l p-4 md:pl-10
-        ">
-            <div>
-                <p class="text-[#ea4826] text-[18px]">01</p>
-                <p class="text-[26px] md:text-[40px]">Research</p>
-            </div>
-
-            <div class="grid gap-3">
-                <p class="text-[18px] md:text-[20px] lg:text-[24px]">Digging deep</p>
-                <p class="text-[14px] md:text-[18px] opacity-60">We unearth valuable insights that inform strategic decisions, guiding you towards sustainable growth and impact.</p>
-            </div>
-        </div>
-
+        />
     </div>
 </div>
 
-<div id="footer" class="w-full fixed bottom-0 z-[-1] max-h-full flex flex-col p-5">
-    <div class="w-full h-full">
-    </div>
-    <p class="text-center text-[8vw] font-bold opacity-10">
-        DESIGNER SOFTWARE
-    </p>
-    <div class="flex items-center justify-between gap-3">
-        <a href="/privacy-policy">
-            <.roll_text
-                lines={["PRIVACY POLICY", "PRIVACY POLICY"]}
-                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px] text-nowrap"
-            />
-        </a>
-        <div class="w-full"></div>
-        <a target="_blank" href="http://instagram.com">
-            <.roll_text
-                lines={["INSTAGRAM", "INSTAGRAM"]}
-                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
-            />
-        </a>
-        <a target="_blank" href="http://linkedin.com">
-            <.roll_text
-                lines={["LINKEDIN", "LINKEDIN"]}
-                class="text-[#d9d9d9] text-[14px] h-[18px] lg:text-[18px] lg:h-[23px]"
-            />
-        </a>
+<div class={
+    if @is_active_menu,
+        do: "
+            nav-menu fixed overflow-hidden z-[-1] text-[50px] flex
+            bg-black w-full duration-300 top-0 h-full active
+        ",
+        else: "
+            nav-menu fixed overflow-hidden z-[-1] text-[50px] flex
+            top-[20px] left-0 h-0 w-full duration-300
+        "
+}>
+    <div class="w-full"></div>
+    <div
+        class={
+            if @is_active_menu,
+                do: "flex flex-col justify-center w-full",
+                else: "flex flex-col justify-center w-full"
+        }>
+        <.text_roll
+            font_size="95px" height="95px"
+            content="HOME"
+            class="
+                font-bold leading-[100%]
+                text-[#464646] hover:text-white duration-300
+            "
+        />
+        <.text_roll
+            font_size="95px" height="95px"
+            content="SHOWCASE"
+            class="
+                font-bold leading-[100%]
+                text-[#464646] hover:text-white duration-300
+            "
+        />
+        <.text_roll
+            font_size="95px" height="95px"
+            content="CAREER"
+            class="
+                font-bold leading-[100%]
+                text-[#464646] hover:text-white duration-300
+            "
+        />
+        <.text_roll
+            font_size="95px" height="95px"
+            content="ABOUT"
+            class="
+                font-bold leading-[100%]
+                text-[#464646] hover:text-white duration-300
+            "
+        />
+        <.text_roll
+            font_size="95px" height="95px"
+            content="CONTACTS"
+            class="
+                font-bold leading-[100%]
+                text-[#464646] hover:text-white duration-300
+            "
+        />
     </div>
 </div>

@@ -17,33 +17,6 @@ defmodule DesignerSoftwareWeb.Router do
     scope "/", DesignerSoftwareWeb do
         pipe_through :browser
 
-        live "/",               MainLive.Index,     :index
-        live "/hire-me",        MainLive.HireMe,    :index
-        live "/about",          MainLive.About,     :index
-        live "/privacy-policy", MainLive.PrivPo,    :index
-        live "/p/:project",     MainLive.Project,   :index
-        get  "/p",              RedirectController, :redirect_to_home
-    end
-
-    # Other scopes may use custom stacks.
-    # scope "/api", DesignerSoftwareWeb do
-    #   pipe_through :api
-    # end
-
-    # Enable LiveDashboard and Swoosh mailbox preview in development
-    if Application.compile_env(:designer_software, :dev_routes) do
-        # If you want to use the LiveDashboard in production, you should put
-        # it behind authentication and allow only admins to access it.
-        # If your application does not have an admins-only section yet,
-        # you can use Plug.BasicAuth to set up some basic authentication
-        # as long as you are also using SSL (which you should anyway).
-        import Phoenix.LiveDashboard.Router
-
-        scope "/dev" do
-            pipe_through :browser
-
-            live_dashboard "/dashboard", metrics: DesignerSoftwareWeb.Telemetry
-            forward "/mailbox", Plug.Swoosh.MailboxPreview
-        end
+        live "/", MainLive.Index, :index
     end
 end
