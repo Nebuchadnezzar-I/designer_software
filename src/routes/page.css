@@ -1,0 +1,86 @@
+.menu-container {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background: black;
+    overflow: hidden;
+    height: 0;
+    opacity: 0.5;
+    top: 20px;
+    transition:
+        height 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+        opacity 0.3s ease,
+        top 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.menu-container.open {
+    height: 100vh;
+    opacity: 1;
+    top: 0;
+}
+
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 10px 0 10px;
+}
+
+.head-text {
+    font-size: 50px;
+    line-height: 50px;
+}
+
+.child-text {
+    font-size: 14px;
+}
+
+.main-content-padding {
+    padding: 0px 10px 0 10px;
+}
+
+@media (width >= 760px) {
+    .nav-menu {
+        padding: 20px 20px 0 20px;
+    }
+
+    .main-content-padding {
+        padding: 0px 20px 0 20px;
+    }
+
+    .head-text {
+        font-size: 90px;
+        line-height: 90px;
+    }
+}
+
+@media (width >= 1440px) {
+    .head-text {
+        font-size: 110px;
+        line-height: 110px;
+    }
+
+    .child-text {
+        font-size: 16px;
+    }
+}
+
+@media (width >= 1440px) {
+    .nav-menu {
+        padding: 40px 20px 0 20px;
+    }
+
+    .head-text {
+        font-size: 130px;
+        line-height: 130px;
+    }
+
+    .child-text {
+        font-size: 18px;
+    }
+}

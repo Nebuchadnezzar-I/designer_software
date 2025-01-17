@@ -1,3 +1,0 @@
-defmodule DesignerSoftware do
-
-end

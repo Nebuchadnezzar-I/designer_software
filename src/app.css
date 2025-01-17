@@ -1,0 +1,29 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import 'fonts.css';
+
+:root {
+    --bg: #000000;
+    --text: #D9D9D9;
+}
+
+body {
+    background:         #000000;
+    color:              #D9D9D9;
+    font-family:        'NHaasGrotesk', sans-serif;
+    margin: 0;
+}
+
+.hover-link {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.hover-link .inner {
+    display: flex;
+    flex-direction: column;
+    transition: all 200ms cubic-bezier(0.25, 1, 0.5, 1);
+}
