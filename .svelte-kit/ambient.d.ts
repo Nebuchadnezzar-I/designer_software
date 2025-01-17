@@ -34,6 +34,8 @@ declare module '$env/static/private' {
 	export const COLORTERM: string;
 	export const npm_config_cache: string;
 	export const LESS: string;
+	export const TERM_PROGRAM_VERSION: string;
+	export const TMUX: string;
 	export const I3SOCK: string;
 	export const NODE: string;
 	export const COLOR: string;
@@ -66,6 +68,7 @@ declare module '$env/static/private' {
 	export const npm_config_prefix: string;
 	export const ASDF_DIR: string;
 	export const USER: string;
+	export const TMUX_PANE: string;
 	export const CUDA_PATH: string;
 	export const DISPLAY: string;
 	export const npm_lifecycle_event: string;
@@ -90,6 +93,7 @@ declare module '$env/static/private' {
 	export const ALACRITTY_WINDOW_ID: string;
 	export const npm_node_execpath: string;
 	export const OLDPWD: string;
+	export const TERM_PROGRAM: string;
 	export const _: string;
 	export const NODE_ENV: string;
 }
@@ -131,6 +135,8 @@ declare module '$env/dynamic/private' {
 		COLORTERM: string;
 		npm_config_cache: string;
 		LESS: string;
+		TERM_PROGRAM_VERSION: string;
+		TMUX: string;
 		I3SOCK: string;
 		NODE: string;
 		COLOR: string;
@@ -163,6 +169,7 @@ declare module '$env/dynamic/private' {
 		npm_config_prefix: string;
 		ASDF_DIR: string;
 		USER: string;
+		TMUX_PANE: string;
 		CUDA_PATH: string;
 		DISPLAY: string;
 		npm_lifecycle_event: string;
@@ -187,6 +194,7 @@ declare module '$env/dynamic/private' {
 		ALACRITTY_WINDOW_ID: string;
 		npm_node_execpath: string;
 		OLDPWD: string;
+		TERM_PROGRAM: string;
 		_: string;
 		NODE_ENV: string;
 		[key: `PUBLIC_${string}`]: undefined;
