@@ -43,64 +43,40 @@ let menu = $state(false);
     main-content-padding grid gap-[20px] grid-cols-3
     mt-[3rem] md:mt-[3rem] bg-black mb-[100dvh] pb-[2rem]
 ">
-    <div class="w-full h-[600px] overflow-hidden rounded-3xl">
-        <img
-            class="
-            w-full h-full object-cover
-            hover:scale-105 duration-300
-            "
-            src="https://framerusercontent.com/images/VjmK5k85pyzQst2qyaxmS147Q9c.png"
-        />
+    <div class="header-project hp-0">
+        <p class="text-xl font-[500]">
+            [ ELLOS REBRANDING ]
+        </p>
     </div>
 
-    <div class="w-full h-[600px] overflow-hidden rounded-3xl">
-        <img
-            class="
-            w-full h-full object-cover
-            hover:scale-105 duration-300
-            "
-            src="https://framerusercontent.com/images/N0z5lkGDtjLyY06sidjYyyi5wc.png"
-        />
+    <div class="header-project hp-1">
+        <p class="text-xl font-[500]">
+            [ WILEY ROOTS BREWING ]
+        </p>
     </div>
 
-    <div class="w-full h-[600px] overflow-hidden rounded-3xl">
-        <img
-            class="
-            w-full h-full object-cover
-            hover:scale-105 duration-300
-            "
-            src="https://framerusercontent.com/images/2Vh0ijefmO9vWEVb9nBlvZD9A.png"
-        />
+    <div class="header-project hp-2">
+        <p class="text-xl font-[500]">
+            [ CATERING ]
+        </p>
     </div>
 
-    <div class="w-full h-[600px] overflow-hidden rounded-3xl">
-        <img
-            class="
-            w-full h-full object-cover
-            hover:scale-105 duration-300
-            "
-            src="https://framerusercontent.com/images/vENclyz0MfVmH9NEJUgPYr0TXt4.png"
-        />
+    <div class="header-project hp-3">
+        <p class="text-xl font-[500]">
+            [ KINETIC CAMPAIGN ]
+        </p>
     </div>
 
-    <div class="w-full h-[600px] overflow-hidden rounded-3xl">
-        <img
-            class="
-            w-full h-full object-cover
-            hover:scale-105 duration-300
-            "
-            src="https://framerusercontent.com/images/GiJIy9YAYQ1o7IVnmTsvkgW69s.png"
-        />
+    <div class="header-project hp-4">
+        <p class="text-xl font-[500]">
+            [ DESERT FLOWER ]
+        </p>
     </div>
 
-    <div class="w-full h-[600px] overflow-hidden rounded-3xl">
-        <img
-            class="
-            w-full h-full object-cover
-            hover:scale-105 duration-300
-            "
-            src="https://framerusercontent.com/images/2CKwwox9Qk3SIPYzfE2P0ZU4es.png"
-        />
+    <div class="header-project hp-5">
+        <p class="text-xl font-[500]">
+            [ DESERT FLOWER ]
+        </p>
     </div>
 </div>
 
