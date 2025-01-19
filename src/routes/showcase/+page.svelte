@@ -1,3 +1,3 @@
 <div class="">
-    Home
+    Showcase
 </div>
