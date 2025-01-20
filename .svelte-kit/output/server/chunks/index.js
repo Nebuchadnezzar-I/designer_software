@@ -1,4 +1,3 @@
-import "clsx";
 const HYDRATION_START = "[";
 const HYDRATION_END = "]";
 const HYDRATION_ERROR = {};
@@ -80,9 +79,6 @@ function render(component, options = {}) {
     body: payload.out
   };
 }
-function stringify(value) {
-  return typeof value === "string" ? value : value == null ? "" : value + "";
-}
 function bind_props(props_parent, props_now) {
   for (const key in props_now) {
     const initial_value = props_parent[key];
@@ -98,7 +94,6 @@ export {
   HYDRATION_END as b,
   pop as c,
   bind_props as d,
-  stringify as e,
   getContext as g,
   push as p,
   render as r,

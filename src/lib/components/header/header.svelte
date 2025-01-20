@@ -1,7 +1,17 @@
-<script>
-	import NavText from './../main-text/nav-text.svelte';
+<script lang="ts">
+import NavText from './../main-text/nav-text.svelte';
 import MainText from "../main-text/main-text.svelte";
 let isMenuOpen = $state(false);
+
+function InstantClose() {
+    const menu = document.getElementById("menu")!;
+    menu.classList.add("hidden");
+
+    setTimeout(() => {
+        menu.classList.add("remove");
+        isMenuOpen = false;
+    }, 300);
+}
 </script>
 
 <div class="
@@ -13,11 +23,11 @@ let isMenuOpen = $state(false);
 
     <a href="/"><MainText content="[ NOTHING DESIGN ]" /></a>
     <button onclick={() => isMenuOpen = !isMenuOpen}>
-        <MainText content="[ MENU ]" />
+        <MainText content={`[ ${ !isMenuOpen ? "MENU" : "CLOSE" } ]`} />
     </button>
 </div>
 
-<div class={`
+<div id="menu" class={`
     overflow-hidden fixed w-full duration-300
     ${isMenuOpen ? "h-[100dvh] top-0 opacity-100" : "h-0 top-[20px] opacity-50"}
     `}>
@@ -25,13 +35,23 @@ let isMenuOpen = $state(false);
     <div class="h-[100dvh] bg-black flex flex-col">
         <!-- Main links -->
         <div class="w-full h-full flex items-center justify-center">
-            <div class="w-full"></div>
-            <div class="flex flex-col w-full">
-                <NavText content="HOME" />
-                <NavText content="SHOWCASE" />
-                <NavText content="CAREER" />
-                <NavText content="ABOUT" />
-                <NavText content="CONTACTS" />
+            <div class="md:w-full"></div>
+            <div class="flex flex-col w-full p-3 md:p-0">
+                <a href="/" onclick={InstantClose}>
+                    <NavText content="HOME" />
+                </a>
+                <a href="/showcase" onclick={InstantClose}>
+                    <NavText content="SHOWCASE" />
+                </a>
+                <a href="/career" onclick={InstantClose}>
+                    <NavText content="CAREER" />
+                </a>
+                <a href="/about" onclick={InstantClose}>
+                    <NavText content="ABOUT" />
+                </a>
+                <a href="/contacts" onclick={InstantClose}>
+                    <NavText content="CONTACTS" />
+                </a>
             </div>
         </div>
         <!-- Footer -->
@@ -45,5 +65,4 @@ let isMenuOpen = $state(false);
             <MainText content="INSTAGRAM" />
         </div>
     </div>
-
 </div>
