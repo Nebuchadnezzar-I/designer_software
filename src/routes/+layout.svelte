@@ -1,17 +1,28 @@
 <script lang="ts">
-	import Header from '$lib/components/header/header.svelte';
-	import '../app.css';
-	let { children } = $props();
+import Header from '$lib/header/header.svelte';
+import { writable } from 'svelte/store';
+
+let { children } = $props();
+
+let AppState = writable({
+    isActive: false
+});
+
+function expandLayout() {
+    AppState.update(state => ({ ...state, isActive: true }));
+}
+
+function collapseLayout() {
+    AppState.update(state => ({ ...state, isActive: false }));
+}
+
+import '../app.css';
 </script>
 
-<Header />
 <div class="
-	pt-[36px]
-	md:pt-[46px]
-	xl:pt-[66px]
-
-	px-[10px]
-	sm:px-[20px]
+    fixed left-0 w-full h-full overflow-auto scroll-smooth no-scrollbar
+    {$AppState.isActive ? "top-[100dvh]" : "top-[0px] duration-500 ease-in-out"}
 ">
-	{@render children()}
+    <Header expandLayout={expandLayout} collapseLayout={collapseLayout} />
+    {@render children()}
 </div>
