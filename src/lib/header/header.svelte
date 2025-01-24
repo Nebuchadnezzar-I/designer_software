@@ -1,5 +1,8 @@
 <script lang="ts">
 import NavLink from '$lib/text/nav-link.svelte';
+import {
+    onMount
+} from 'svelte';
 import Link from '../text/link.svelte';
 let {
     expandLayout,
@@ -15,8 +18,15 @@ const MenuAction = {
 
 let menuCollapsedState = $state < string > (MenuAction.RESET);
 let menuState = $state < string > (MenuAction.CLOSE);
+let currentPageList = $state < string > ("");
 
-function animatePageTransition() {
+onMount(() => {
+    currentPageList = window.location.pathname;
+})
+
+function animatePageTransition(loc: string) {
+    currentPageList = loc;
+
     expandLayout();
 
     setTimeout(() => {
@@ -65,19 +75,34 @@ function toggleMenu() {
             <div class="w-full h-full flex items-center justify-center">
                 <div class="md:w-full"></div>
                 <div class="flex flex-col w-full p-3 md:p-0">
-                    <a href="/" onclick={animatePageTransition}>
+                    <a
+                        class={currentPageList == "/" ? "pointer-events-none" : ""}
+                        href="/"
+                        onclick={() => animatePageTransition("/")}>
                         <NavLink text="HOME" />
                     </a>
-                    <a href="/showcase" onclick={animatePageTransition}>
+                    <a
+                        class={currentPageList == "/showcase" ? "pointer-events-none" : ""}
+                        href="/showcase"
+                        onclick={() => animatePageTransition("/showcase")}>
                         <NavLink text="SHOWCASE" />
                     </a>
-                    <a href="/career" onclick={animatePageTransition}>
+                    <a
+                        class={currentPageList == "/career" ? "pointer-events-none" : ""}
+                        href="/career"
+                        onclick={() => animatePageTransition("/career")}>
                         <NavLink text="CAREER" />
                     </a>
-                    <a href="/about" onclick={animatePageTransition}>
+                    <a
+                        class={currentPageList == "/about" ? "pointer-events-none" : ""}
+                        href="/about"
+                        onclick={() => animatePageTransition("/about")}>
                         <NavLink text="ABOUT" />
                     </a>
-                    <a href="/contacts" onclick={animatePageTransition}>
+                    <a
+                        class={currentPageList == "/contacts" ? "pointer-events-none" : ""}
+                        href="/contacts"
+                        onclick={() => animatePageTransition("/contacts")}>
                         <NavLink text="CONTACTS" />
                     </a>
                 </div>
